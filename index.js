@@ -3,7 +3,7 @@ require("dotenv").config();
 // Print out value of API key stored in .env file
 
 async function getImage(query) {
-  const endpoint = `https://api.giphy.com/v1/gifs/search?api_key=${process.env.API_KEY}&q=${this.query}&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips`;
+  const endpoint = `https://api.giphy.com/v1/gifs/search?api_key=${process.env.API_KEY}&q=${query}&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips`;
   try {
     const response = await fetch(endpoint);
     const data = await response.json();
@@ -14,8 +14,8 @@ async function getImage(query) {
   }
 }
 
-async function helper(){
-    await 
+async function helper() {
+  await getImage("cat");
 }
 
 console.log(process.env.API_KEY);
