@@ -7,10 +7,15 @@ async function getImage(query) {
   try {
     const response = await fetch(endpoint);
     const data = await response.json();
-    console.log(data.data[0].url);
+    console.log(data.data[Math.floor(Math.random() * data.data.length)].url);
+    return data.data[Math.floor(Math.random() * data.data.length)].url;
   } catch (error) {
     console.log(error);
   }
+}
+
+async function helper(){
+    await 
 }
 
 console.log(process.env.API_KEY);
